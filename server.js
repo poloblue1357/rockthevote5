@@ -9,6 +9,8 @@ const path = require("path");
 
 const port = process.env.PORT || 8000;
 
+const secret = process.env.SECRET || "cookie sandwich bicycle eggshell"
+
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
@@ -27,7 +29,7 @@ app.use(morgan("dev"));
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 app.use("/auth", require("./routes/auth.js"))
-app.use("/api", expressJwt({ secret: process.env.SECRET, algorithms: ["HS256"]})) // req.user
+app.use("/api", expressJwt({ secret: secret, algorithms: ["HS256"]})) // req.user
 app.use("/api/issue", require("./routes/issue"))
 app.use("/api/comment", require("./routes/comment"))
 app.use("/api/vote", require("./routes/vote"))
