@@ -6,6 +6,7 @@ import Profile from "./components/Profile"
 import Navbar from "./components/Navbar"
 import Public from "./components/Public"
 import ProtectedRoute from "./components/ProtectedRoute"
+import "./App.css"
 
 function App() {
     const { token, logout } = useContext(UserContext)
