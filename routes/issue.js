@@ -75,7 +75,7 @@ issueRouter.put("/:issueId", (req, res, next) => {
                 res.status(500)
                 return next(err)
             }
-            return res.send(issue)
+            return res.status(201).send(issue)
         }
     )
 })

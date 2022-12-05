@@ -36,6 +36,7 @@ app.use("/api/vote", require("./routes/vote"))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use((err, req, res, next) => {
+    console.log(req.params)
     console.log(err)
     if(err.name === "UnauthorizedError") {
         res.status(err.status)
