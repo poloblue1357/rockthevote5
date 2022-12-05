@@ -8,7 +8,7 @@ function Public(props) {
     useEffect(() => {
        getAllIssues()
        getComments()
-    }, [getAllIssues, getComments])
+    }, [])
     
     return (
         <div>
